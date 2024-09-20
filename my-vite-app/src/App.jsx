@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import './App.css'; // อย่าลืมสร้างไฟล์ CSS ถ้าต้องการสไตล์เพิ่มเติม
-import pumpkinImage from './images/fug-tong.jpg'; // รูปฟักทอง
-import defaultPigImage from './images/moodeng.jpg'; // รูปหมูเด้งเริ่มต้น
-import watermelonImage from './images/tang-mo.jpg'; // รูปแตงโม
-import grassImage from './images/yaa.jpg'; // รูปหญ้า
-import realPigImage from './images/realpig.jfif'; // รูปหมูจริง
+import './App.css'; 
+import pumpkinImage from './images/fug-tong.jpg'; 
+import defaultPigImage from './images/moodeng.jpg'; 
+import watermelonImage from './images/tang-mo.jpg'; 
+import grassImage from './images/yaa.jpg'; 
+import realPigImage from './images/realpig.jfif'; 
 
 const App = () => {
   const [level, setLevel] = useState(0);
-  const [image, setImage] = useState(defaultPigImage); // รูปภาพเริ่มต้น
-  const [size, setSize] = useState(250); // ขนาดเริ่มต้นของรูปภาพหมู
+  const [image, setImage] = useState(defaultPigImage); 
+  const [size, setSize] = useState(250);
 
   const handleDrop = (event, foodValue) => {
     event.preventDefault();
@@ -24,11 +24,11 @@ const App = () => {
     const newLevel = level + foodValue;
     setLevel(newLevel);
 
-    // ปรับขนาดรูปภาพตาม Level
+   
     if (newLevel > 100) {
-      setImage(realPigImage); // เปลี่ยนเป็นรูปภาพตนเอง
+      setImage(realPigImage); 
     }
-    setSize(250 + newLevel / 2); // ขนาดใหญ่ขึ้นตาม Level
+    setSize(250 + newLevel / 2); 
   };
 
   const handleDragOver = (event) => {
@@ -54,7 +54,7 @@ const App = () => {
           borderRadius: '15px',
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
         }}
-        onDrop={(event) => handleDrop(event, 0)} // ให้หมูเด้งรับอาหารที่ลากเข้ามา
+        onDrop={(event) => handleDrop(event, 0)} 
         onDragOver={handleDragOver}
       >
         <p style={{ position: 'absolute', top: '10px', left: '50%', transform: 'translate(-50%, 0)', color: '#ff1493' }}>
